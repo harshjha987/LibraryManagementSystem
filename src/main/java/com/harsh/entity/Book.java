@@ -29,7 +29,7 @@ public class Book {
 	
 	private int bookPrice;
 	
-	private boolean isAvailable = true;
+	private boolean isAvailable;
 	
 	//Relationships
 	@ManyToOne
