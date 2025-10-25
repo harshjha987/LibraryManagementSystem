@@ -1,5 +1,6 @@
 package com.harsh.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,9 +24,16 @@ public class Member {
 	
 	private String name;
 	
+	@Column(unique = true)
 	private String email;
 	
+	private String password;
+	@Column(unique = true)
 	private String phoneNumber;
+	
+	private String address;
+	
+	private boolean isActive;
 	
 	
 	

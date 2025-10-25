@@ -3,6 +3,7 @@ package com.harsh.entity;
 import java.util.List;
 
 import jakarta.annotation.Generated;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class Author {
 	
 	private String Nationality;
 	
-	@OneToMany(mappedBy = "author")
+	@OneToMany(mappedBy = "author",cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private List<Book>books;
 
 }

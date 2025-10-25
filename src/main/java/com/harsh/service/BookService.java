@@ -29,6 +29,7 @@ public class BookService {
 	    dto.setId(book.getId());
 	    dto.setTitle(book.getBookTitle());
 	    dto.setPrice(book.getBookPrice());
+	    dto.setAvailable(book.isAvailable());
 
 	    // Handle possible null author safely
 	    if (book.getAuthor() != null) {
@@ -99,10 +100,10 @@ public class BookService {
 	}
 
 	
-	public void deleteBook(Long id) {
-	    Book book = bookRepo.findById(id)
-	                        .orElseThrow(() -> new ResourceNotFoundException("Book not found"));
-	    bookRepo.delete(book);
+	public void deleteBook() {
+//	    Book book = bookRepo.findById(id)
+//	                        .orElseThrow(() -> new ResourceNotFoundException("Book not found"));
+	    bookRepo.deleteAll();
 	}
 
 	
